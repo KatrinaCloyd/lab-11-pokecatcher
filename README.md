@@ -4,10 +4,10 @@ FOLDER STRUCTURE:
     -utils file 
     -app js - landing stuff to fire right away 
 
-HTML: 
-    -Main page
-        -div for game instructions
-        -div for images
+X HTML: 
+    X-Main page
+        X-div for game instructions
+        X-div for images
 
 JS:
     -function to set info to storage 
@@ -51,4 +51,9 @@ HTML:
     -clear results button 
         -clear cart function 
         -redirect to main page 
+
+CSS
+    -fix up css styling now
+
+THEN look at stretch goals
     
