@@ -14,11 +14,11 @@ body {
     --color5: hsla(224, 40%, 79%, 1); */
     
     --header-height: 80px;
-    --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
+    --shadow: 0px 10px 20px -12px #2468b1;
     --gutter: 30px;
     --footer-height: 25px;
     
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: var(--color2);
 }
 
@@ -51,6 +51,7 @@ header {
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
+    background-color: #fccf00;
 }
 
 footer {
@@ -58,12 +59,14 @@ footer {
     justify-content: flex-end;
     background-color: var(--color3);
     box-shadow: var(--shadow);
+    color: #2468b1;
 }
 
 
 h2 {
     font-size: 1.8rem;
     font-weight: bold;
+    color: #2468b1;
 }
 
 .gutter-right {
@@ -77,8 +80,6 @@ h2 {
 header img {
     height: var(--header-height);
 }
-
-
 
 content {
     width: 80%;
@@ -112,7 +113,7 @@ figure{
 
 figcaption{
     text-align: center;
-    color: darkslategrey;
+    color: #2468b1;
     font-size: x-large;
     font-weight: bolder; 
 }
@@ -121,41 +122,32 @@ figcaption{
     max-width: 100%;
 }
 .pokeImg:hover{
-    background: radial-gradient(circle, rgba(240,241,19,1) 0%, rgba(252,70,107,0) 75%);
+    background: radial-gradient(circle, #fccf00 0%, rgba(252,70,107,0) 75%);
 }
 
 table{
-    border: solid .5px black;
+    padding: 5px;
+    border: solid .5px #fccf00;
+    color: #2468b1;
 }
 th{
-    border-bottom: solid 2px black;
+    border-bottom: solid 2px #fccf00;
     padding: 10px;
 }
 td{
     padding: 5px 10px;
 }
+tr{
+    background-color: rgba(252, 207, 0, 0.2);
+}
 
 #reset{
     margin: 20px;
+    color: #2468b1;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    border: solid .5px #2468b1;
+    padding: 10px;
+    width: 200px;
+    background-color: rgba(252, 207, 0, 0.8);    
 }
-
-  @keyframes pulse {
-    20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
-    }
-
-    40% {
-        transform: rotate3d(10, 10, -10, 50deg) scale(1);
-    }
-
-    60% {
-        transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
-
-    80% {
-        transform: rotate3d(10, 10, 10, 50deg) scale(1);
-    }
-
-  }
-
-

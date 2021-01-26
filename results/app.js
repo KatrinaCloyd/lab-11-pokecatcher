@@ -15,15 +15,15 @@ var chart = new Chart(ctx, { // eslint-disable-line
         labels: nameArray(itemArrayFromLS, pokemonData),
         datasets: [{
             label: '# of Catches',
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgba(252, 207, 0, 0.5)',
+            borderColor: 'rgb(252, 207, 0)',
             borderWidth: 2,
             data: caughtArray(itemArrayFromLS)
         },
         {
             label: '# of Encounters',
-            backgroundColor: 'rgba(80, 99, 132, 0.5)',
-            borderColor: 'rgb(80, 99, 132)',
+            backgroundColor: 'rgba(36, 104, 177, 0.5)',
+            borderColor: 'rgb(36, 104, 177)',
             borderWidth: 2,
             data: seenArray(itemArrayFromLS)
         }]
