@@ -48,3 +48,9 @@ test('findById should return entire bulbasaur object when given id of 1', (expec
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
 });
+
+/*test('findById should return entire bulbasaur object when given id of 1', (expect) => {
+    const expected = '';
+    const actual = randomPoke();
+    expect.deepEqual(actual, expected);
+});*/

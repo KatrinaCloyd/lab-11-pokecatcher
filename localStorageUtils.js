@@ -1,14 +1,4 @@
-/*
-import pokemonData from './pokeData.js';
-
-
--function to set info to storage 
-    -same as get by ID from ecom page 
-
--function to get info from storage 
-    -same as get by ID from ecom page 
-
-*/
+const POKESTATS = 'POKESTATS';
 
 export function findById(id, array) {
     for (let item of array) {
@@ -18,4 +8,44 @@ export function findById(id, array) {
     }
 }
 
+export function setItemsToStats(stats) {
+    if (!stats) {
+        const stringyStats = JSON.stringify(stats);
+        localStorage.setItem(POKESTATS, stringyStats);
+    }
+    localStorage.setItem(POKESTATS, JSON.stringify(stats));
+}
 
+export function getItemsFromStats() {
+    let stringyStats = localStorage.getItem(POKESTATS);
+    let parsedStats = JSON.parse(stringyStats);
+    if (!parsedStats) {
+        parsedStats = [];
+        let stringifiedStats = JSON.stringify(parsedStats);
+        localStorage.setItem(POKESTATS, stringifiedStats);
+    }
+    return parsedStats;
+}
+
+export function upSeenCount(id) {
+    const pokeStats = getItemsFromStats();
+    const selectedPoke = findById(id, pokeStats);
+    if (!selectedPoke) {
+        const newPokeInStats = {
+            id: id,
+            seen: 1,
+            caught: 0,
+        };
+        pokeStats.push(newPokeInStats);
+    } else {
+        selectedPoke.seen++;
+    }
+    setItemsToStats(pokeStats);
+}
+
+export function upCaughtCount(id) {
+    const pokeStats = getItemsFromStats();
+    const selectedPoke = findById(id, pokeStats);
+    selectedPoke.caught++;
+    setItemsToStats(pokeStats);
+}

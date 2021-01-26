@@ -10,14 +10,22 @@ X HTML:
         X-div for images
 
 JS:
-    -function to set info to storage 
-        -same as get by ID from ecom page 
+    X-function to set info to storage 
 
-    -function to get info from storage 
-        -same as get by ID from ecom page 
+    X-function to get info from storage 
 
-    -find item by id
-        -same as get by ID from ecom page 
+    X -find item by id
+    X    -TEST
+
+    X-function to generate three rando poke 
+           X -three new pokemon
+            X-check if unique 
+            X-if no generate three more 
+            X-once they are - render to page  
+                X <-- need a function for this too..
+                -when rendering add them as a button to listen for click 
+                -call increment seen on these three 
+
 
     -function incremenet seen 
         -for all rendered to page 
@@ -25,19 +33,11 @@ JS:
         -if in cart ++ seen
         -if not add to cart with id and seen as 1
 
-     -function increment caught 
+    -function increment caught 
         -for item clicked 
             -get from local storage 
             -if in cart ++ caught
             -if not add to cart with id and seen as 1
-
-    -function to generate three rando poke 
-            -three new pokemon
-            -check if unique 
-            -if no generate three more 
-            -once they are - render to page 
-                -when rendering add them as a button to listen for click 
-            -call increment seen on these three 
 
     OnClick 
         -track turns 
