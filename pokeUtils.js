@@ -15,9 +15,7 @@ export function renderPokeImage(pokeItem) {
     image.src = pokeItem.url_image;
     image.classList.add('pokeImg');
     image.addEventListener('click', () => {
-        //upCaughtCount(pokeItem.id);
-        //if id matche on in there, ++ catches 
-        //if not in there add and set catches to 1. 
+        upCaughtCount(pokeItem.id);
     });
     return image;
 }

@@ -9,10 +9,6 @@ export function findById(id, array) {
 }
 
 export function setItemsToStats(stats) {
-    if (!stats) {
-        const stringyStats = JSON.stringify(stats);
-        localStorage.setItem(POKESTATS, stringyStats);
-    }
     localStorage.setItem(POKESTATS, JSON.stringify(stats));
 }
 
