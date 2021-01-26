@@ -23,34 +23,44 @@ JS:
             X-if no generate three more 
             X-once they are - render to page  
                 X <-- need a function for this too..
-                -when rendering add them as a button to listen for click 
-                -call increment seen on these three 
+                X -when rendering add them as a button to listen for click 
+                X -call increment seen on these three 
 
 
-    -function incremenet seen 
-        -for all rendered to page 
-        -get from local storage 
-        -if in cart ++ seen
-        -if not add to cart with id and seen as 1
+   X -function incremenet seen 
+        X-for all rendered to page 
+        X-get from local storage 
+        X-if in cart ++ seen
+        X-if not add to cart with id and seen as 1
 
-    -function increment caught 
-        -for item clicked 
-            -get from local storage 
-            -if in cart ++ caught
-            -if not add to cart with id and seen as 1
+    X-function increment caught 
+        X-for item clicked 
+            X-get from local storage 
+            X-if in cart ++ caught
+            X-if not add to cart with id and seen as 1
 
-    OnClick 
-        -track turns 
-        -if turns = 10 
-        -redirect to results page 
+    XOnClick 
+        X-track turns 
+        X-if turns = 10 
+        X-redirect to results page 
 
 HTML: 
-    -Results page 
-    -div to show all caught with qty
-    -div to show all seen with times 
-    -clear results button 
-        -clear cart function 
-        -redirect to main page 
+   X -Results page 
+    X -div to show all caught with qty
+    X -div to show all seen with times 
+   
+    -render cart function 
+        -get stats from local storage 
+        -get item by id to get name from original data set 
+        -
+        -render table elements with stats 
+   
+   
+   
+    X -clear results button
+        listener :  
+            -clear cart function 
+            -redirect to main page 
 
 CSS
     -fix up css styling now

@@ -1,7 +1,7 @@
 import { pokemonData } from './pokeData.js';
 import { upSeenCount, upCaughtCount } from './localStorageUtils.js';
 
-// initialize state
+let nmbOfTurns = 0;
 
 // set event listeners to update state and DOM
 
@@ -16,11 +16,17 @@ export function renderPokeImage(pokeItem) {
     image.classList.add('pokeImg');
     image.addEventListener('click', () => {
         upCaughtCount(pokeItem.id);
+        if (nmbOfTurns < 10) {
+            generateThreePoke();
+        } else {
+            window.location = './results/index.html';
+        }
     });
     return image;
 }
 
 export function generateThreePoke() {
+    nmbOfTurns++;
     let pokeOne = randomPoke();
     let pokeTwo = randomPoke();
     let pokeThree = randomPoke();

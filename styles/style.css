@@ -109,6 +109,21 @@ footer {
     max-width: 32%;
 }
 
+table{
+    border: solid .5px black;
+}
+th{
+    border-bottom: solid 2px black;
+    padding: 10px;
+}
+td{
+    padding: 5px 10px;
+}
+
+#reset{
+    margin: 20px;
+}
+
   @keyframes pulse {
     20% {
       transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
