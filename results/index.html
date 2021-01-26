@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Pokemon Catcher</title>
 </head>
 
@@ -19,14 +19,27 @@
     <main>
         <section>
             <h2>
-                Go Get Em!
+                Your Pokemon Haul
             </h2>
             <p>
-                We will show you three pokemon at a time. Click on the one you want to collect. You get ten turns to
-                choose the pokemon you want. After your 10th selection we will show you what you have collected!
+                Here are all of the Pokemon you have caught, along with all the ones you let slip by.
             </p>
-            <div id='poke-options'>
+            <div>
+                <table id='poke-results'>
+                    <tr>
+                        <th>
+                            PokeMon Name
+                        </th>
+                        <th>
+                            Number caught
+                        </th>
+                        <th>
+                            Times you encountered them
+                        </th>
+                    </tr>
+                </table>
             </div>
+            <button id='reset'>Play Again?</button>
 
         </section>
     </main>
@@ -34,7 +47,7 @@
         <div class="copy gutter-right">Catch 'em all! ...that's a Pokemon thing, right?</div>
     </footer>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="./app.js"></script>
 </body>
 
 </html>

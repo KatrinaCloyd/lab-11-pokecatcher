@@ -33,7 +33,7 @@ main {
 section {
     background-color: var(--color5);
     width: 1000px;
-    max-width: 80%;
+    max-width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,7 +98,32 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
-  
+
+.poke-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pokeImg{
+    max-width: 32%;
+}
+
+table{
+    border: solid .5px black;
+}
+th{
+    border-bottom: solid 2px black;
+    padding: 10px;
+}
+td{
+    padding: 5px 10px;
+}
+
+#reset{
+    margin: 20px;
+}
+
   @keyframes pulse {
     20% {
       transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
@@ -117,3 +142,5 @@ footer {
     }
 
   }
+
+

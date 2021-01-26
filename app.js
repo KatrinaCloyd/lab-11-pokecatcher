@@ -1,5 +1,4 @@
-// import functions and grab DOM elements
+// on load render first three poke
+import { generateThreePoke } from './pokeUtils.js';
 
-// initialize state
-
-// set event listeners to update state and DOM
+generateThreePoke();
