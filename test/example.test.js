@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 import { findById } from '../localStorageUtils.js';
 import { pokemonData } from '../pokeData.js';
-import { nameArray } from '../results/resultsUtils.js';
+import { nameArray, seenArray, caughtArray } from '../results/resultsUtils.js';
 
 const test = QUnit.test;
 
@@ -67,7 +67,51 @@ test('nameArry function should take the local storage data and the base data and
             seen: 2,
             caught: 0
         }];
-    const expected = ["metapod", "beedrill", "blastoise"];
+    const expected = ['metapod', 'beedrill', 'blastoise'];
     const actual = nameArray(fakeData, pokemonData);
+    expect.deepEqual(actual, expected);
+});
+
+test('seenArry function should take the local storage data and return an array of number of seens', (expect) => {
+    const fakeData = [
+        {
+            id: 15,
+            seen: 1,
+            caught: 0
+        },
+        {
+            id: 19,
+            seen: 1,
+            caught: 0
+        },
+        {
+            id: 12,
+            seen: 2,
+            caught: 0
+        }];
+    const expected = [1, 1, 2];
+    const actual = seenArray(fakeData);
+    expect.deepEqual(actual, expected);
+});
+
+test('caughtArry function should take the local storage data and return an array of number of seens', (expect) => {
+    const fakeData = [
+        {
+            id: 15,
+            seen: 1,
+            caught: 0
+        },
+        {
+            id: 19,
+            seen: 1,
+            caught: 0
+        },
+        {
+            id: 12,
+            seen: 2,
+            caught: 1
+        }];
+    const expected = [0, 0, 1];
+    const actual = caughtArray(fakeData);
     expect.deepEqual(actual, expected);
 });

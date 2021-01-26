@@ -51,10 +51,11 @@ X HTML:
             C -redirect to main page 
 
 --Chart Day-- 
-    -get cart guts from chart.js
-    -function to get names
-        -will have to find by id to get name like rencer chart row
-        -take in array of objects return array of srings 
+    X-get cart guts from chart.js
+    X-function to get names
+        X-will have to find by id to get name like rencer chart row
+        X-take in array of objects return array of srings 
+        X-TEST
     -function to get caught count for each
         -take in array of objects return array of numbers 
     -function to get seen count for each 

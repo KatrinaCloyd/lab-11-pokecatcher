@@ -38,3 +38,10 @@ export function seenArray(arrayFromCart) {
     }
     return seenArray;
 }
+export function caughtArray(arrayFromCart) {
+    const caughtArray = [];
+    for (let item of arrayFromCart) {
+        caughtArray.push(item.caught);
+    }
+    return caughtArray;
+}
