@@ -1,3 +1,5 @@
+import { findById } from '../localStorageUtils.js';
+
 export function renderLineItems(pokeInCart, pokeFromData) {
     const tr = document.createElement('tr');
 
@@ -13,4 +15,26 @@ export function renderLineItems(pokeInCart, pokeFromData) {
     tr.append(tdName, tdCaughtQty, tdSeentQty);
 
     return tr;
+}
+
+export function nameArray(arrayFromCart, dataArray) {
+    const nameArry = [];
+    //for all poke in cart get name from data array for same id#
+
+    //this gets the item from dataArry based on id in cart
+    for (let itemInLS of arrayFromCart) {
+        let item = findById(itemInLS.id, dataArray);
+        //return the pokebase of an item from dataArray 
+        nameArry.push(item.pokebase);
+        //add that name to the blank array 
+    }
+    return nameArry;
+}
+
+export function seenArray(arrayFromCart) {
+    const seenArray = [];
+    for (let item of arrayFromCart) {
+        seenArray.push(item.seen);
+    }
+    return seenArray;
 }

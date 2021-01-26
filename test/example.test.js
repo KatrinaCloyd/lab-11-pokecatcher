@@ -1,6 +1,7 @@
 // IMPORT MODULES under test here:
 import { findById } from '../localStorageUtils.js';
 import { pokemonData } from '../pokeData.js';
+import { nameArray } from '../results/resultsUtils.js';
 
 const test = QUnit.test;
 
@@ -49,8 +50,24 @@ test('findById should return entire bulbasaur object when given id of 1', (expec
     expect.deepEqual(actual, expected);
 });
 
-/*test('findById should return entire bulbasaur object when given id of 1', (expect) => {
-    const expected = '';
-    const actual = randomPoke();
+test('nameArry function should take the local storage data and the base data and return an array of names', (expect) => {
+    const fakeData = [
+        {
+            id: 15,
+            seen: 1,
+            caught: 0
+        },
+        {
+            id: 19,
+            seen: 1,
+            caught: 0
+        },
+        {
+            id: 12,
+            seen: 2,
+            caught: 0
+        }];
+    const expected = ["metapod", "beedrill", "blastoise"];
+    const actual = nameArray(fakeData, pokemonData);
     expect.deepEqual(actual, expected);
-});*/
+});

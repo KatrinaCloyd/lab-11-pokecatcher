@@ -1,5 +1,5 @@
 import { getItemsFromStats, findById } from '../localStorageUtils.js';
-import { renderLineItems } from './resultsUtils.js';
+import { renderLineItems, nameArray } from './resultsUtils.js';
 import { pokemonData } from '../pokeData.js';
 
 const POKESTATS = 'POKESTATS';
@@ -53,3 +53,5 @@ resetBtn.addEventListener('click', () => {
     localStorage.setItem(POKESTATS, strDefaultStats);
     location.href = '../index.html';
 });
+
+console.log(nameArray(itemArrayFromLS, pokemonData));
