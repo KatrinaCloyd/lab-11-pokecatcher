@@ -45,16 +45,12 @@ export function caughtArray(arrayFromCart) {
     }
     return caughtArray;
 }
-export function imgArray(arrayFromCart, dataArray) {
-    const imgArry = [];
-    //for all poke in cart get name from data array for same id#
 
-    //this gets the item from dataArry based on id in cart
-    for (let itemInLS of arrayFromCart) {
+export function typeOfCaughtArray(caughtArray, dataArray) {
+    const typeArray = [];
+    for (let itemInLS of caughtArray) {
         let item = findById(itemInLS.id, dataArray);
-        //return the pokebase of an item from dataArray 
-        imgArry.push(item.url_image);
-        //add that name to the blank array 
+        typeArray.push(item.type_1);
     }
-    return imgArry;
+    return typeArray;
 }

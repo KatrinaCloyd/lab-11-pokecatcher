@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 import { findById } from '../localStorageUtils.js';
 import { pokemonData } from '../pokeData.js';
-import { nameArray, seenArray, caughtArray } from '../results/resultsUtils.js';
+import { nameArray, seenArray, caughtArray, typeOfCaughtArray } from '../results/resultsUtils.js';
 
 const test = QUnit.test;
 
@@ -113,5 +113,27 @@ test('caughtArry function should take the local storage data and return an array
         }];
     const expected = [0, 0, 1];
     const actual = caughtArray(fakeData);
+    expect.deepEqual(actual, expected);
+});
+
+test('typeOfCaughtArry function should take the local storage data and return an array of strings', (expect) => {
+    const fakeData = [
+        {
+            id: 15,
+            seen: 1,
+            caught: 0
+        },
+        {
+            id: 19,
+            seen: 1,
+            caught: 0
+        },
+        {
+            id: 12,
+            seen: 2,
+            caught: 1
+        }];
+    const expected = ['bug', 'bug', 'water'];
+    const actual = typeOfCaughtArray(fakeData, pokemonData);
     expect.deepEqual(actual, expected);
 });
