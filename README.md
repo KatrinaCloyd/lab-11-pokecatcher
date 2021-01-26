@@ -56,10 +56,14 @@ X HTML:
         X-will have to find by id to get name like rencer chart row
         X-take in array of objects return array of srings 
         X-TEST
-    -function to get caught count for each
-        -take in array of objects return array of numbers 
-    -function to get seen count for each 
-        -same as above take in array of objects return array of numbers 
+    X-function to get caught count for each
+        X-take in array of objects return array of numbers 
+        X-TEST
+    X-function to get seen count for each 
+        X-same as above take in array of objects return array of numbers 
+        X-TEST
+
+    -add new arrays to correct parts of the chart on the page 
 
 CSS
     -fix up css styling now

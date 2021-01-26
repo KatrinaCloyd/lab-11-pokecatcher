@@ -1,5 +1,5 @@
 import { getItemsFromStats, findById } from '../localStorageUtils.js';
-import { renderLineItems, nameArray } from './resultsUtils.js';
+import { renderLineItems, nameArray, seenArray, caughtArray, imgArray } from './resultsUtils.js';
 import { pokemonData } from '../pokeData.js';
 
 const POKESTATS = 'POKESTATS';
@@ -12,20 +12,20 @@ var chart = new Chart(ctx, { // eslint-disable-line
 
     // The data for our dataset
     data: {
-        labels: ['Blah', 'BlahBlah', 'Blerg', 'UUuuugh'],
+        labels: nameArray(itemArrayFromLS, pokemonData),
         datasets: [{
             label: '# of Catches',
             backgroundColor: 'rgba(255, 99, 132, 0.5)',
             borderColor: 'rgb(255, 99, 132)',
             borderWidth: 2,
-            data: [2, 4, 5, 2]
+            data: caughtArray(itemArrayFromLS)
         },
         {
             label: '# of Encounters',
             backgroundColor: 'rgba(80, 99, 132, 0.5)',
             borderColor: 'rgb(80, 99, 132)',
             borderWidth: 2,
-            data: [2, 4, 5, 2]
+            data: seenArray(itemArrayFromLS)
         }]
     },
 

@@ -99,14 +99,29 @@ footer {
     box-shadow: var(--shadow);
 }
 
-.poke-options{
+.poke-options {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
+figure{
+    display: inline-block;
+    max-width: 20%;
+}
+
+figcaption{
+    text-align: center;
+    color: darkslategrey;
+    font-size: x-large;
+    font-weight: bolder; 
+}
+
 .pokeImg{
-    max-width: 32%;
+    max-width: 100%;
+}
+.pokeImg:hover{
+    background: radial-gradient(circle, rgba(240,241,19,1) 0%, rgba(252,70,107,0) 75%);
 }
 
 table{

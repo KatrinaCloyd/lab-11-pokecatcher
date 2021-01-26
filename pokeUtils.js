@@ -11,6 +11,7 @@ export function randomPoke() {
 }
 
 export function renderPokeImage(pokeItem) {
+    const figure = document.createElement('figure');
     const image = document.createElement('img');
     image.src = pokeItem.url_image;
     image.classList.add('pokeImg');
@@ -22,7 +23,10 @@ export function renderPokeImage(pokeItem) {
             window.location = './results/index.html';
         }
     });
-    return image;
+    const figureCap = document.createElement('figcaption');
+    figureCap.textContent = pokeItem.pokebase;
+    figure.append(image, figureCap);
+    return figure;
 }
 
 export function generateThreePoke() {
