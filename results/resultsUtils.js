@@ -66,8 +66,9 @@ export function typeOfCaughtArray(itemsInCart, dataArray) {
     return uniqueTypeArray;
 }
 
-//this returns array of types, including duplicates. 
-//need to count up how many times an item appears in the array and add that to the array 
+/*
+//this returns array of types, including duplicates.
+//need to count up how many times an item appears in the array and add that to the array
 export function typeCountArray(storageArray, dataArray) {
     let typeArray = [];
     for (let itemInLS of storageArray) {
@@ -75,10 +76,9 @@ export function typeCountArray(storageArray, dataArray) {
         typeArray.push(item.type_1);
     }
     let typeCountArray = [];
-    for (let type of typeArray) {
-        //for each type in array{i} look to see if it is equal to the next one, or next one, or next one. 
-        //if so ++ counter if not create counter of 1, 
-
-
+    for (let string of typeArray) {
+        //for each thing in array{i} look to see if it is equal to the next one, or next one, or next one.
+        //if so ++ counter if not create counter of 1,
+        //when done comparing push that typeCountArray
     }
-}
+}*/

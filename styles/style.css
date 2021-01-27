@@ -69,6 +69,10 @@ h2 {
     color: #2468b1;
 }
 
+h3 {
+    text-align: center;
+}
+
 .gutter-right {
     margin-right: 20px;
 }
