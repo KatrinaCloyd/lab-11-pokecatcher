@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 import { findById } from '../localStorageUtils.js';
 import { pokemonData } from '../pokeData.js';
-import { nameArray, seenArray, caughtArray, typeOfCaughtArray } from '../results/resultsUtils.js';
+import { nameArray, seenArray, caughtArray, typeOfCaughtArray, typeCountArray } from '../results/resultsUtils.js';
 
 const test = QUnit.test;
 
@@ -140,5 +140,38 @@ test('typeOfCaughtArry function should take the local storage data and return an
         }];
     const expected = ['normal', 'water'];
     const actual = typeOfCaughtArray(fakeData, pokemonData);
+    expect.deepEqual(actual, expected);
+});
+
+
+test('typeCountArry takes the local storage data and returns an array of counts for each type of caught poke', (expect) => {
+    const fakeData = [
+        {
+            id: 15, //bug
+            seen: 1,
+            caught: 0
+        },
+        {
+            id: 21, //normal
+            seen: 1,
+            caught: 1
+        },
+        {
+            id: 12, //water
+            seen: 2,
+            caught: 1
+        },
+        {
+            id: 19, //bug
+            seen: 1,
+            caught: 0
+        },
+        {
+            id: 12, //water
+            seen: 1,
+            caught: 1
+        },];
+    const expected = [1, 2];
+    const actual = typeCountArray(fakeData, pokemonData);
     expect.deepEqual(actual, expected);
 });

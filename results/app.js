@@ -1,5 +1,5 @@
 import { getItemsFromStats, findById } from '../localStorageUtils.js';
-import { renderLineItems, nameArray, seenArray, caughtArray, typeOfCaughtArray } from './resultsUtils.js';
+import { renderLineItems, nameArray, seenArray, caughtArray, typeOfCaughtArray, typeCountArray } from './resultsUtils.js';
 import { pokemonData } from '../pokeData.js';
 
 const POKESTATS = 'POKESTATS';
@@ -46,7 +46,7 @@ var myDoughnutChart = new Chart(abc, { // eslint-disable-line
     type: 'doughnut',
     data: {
         datasets: [{
-            data: [2, 4, 1, 1, 2], //need to use type of counter function here
+            data: typeCountArray(itemArrayFromLS, pokemonData), //need to use type of counter function here
             backgroundColor: [
                 '#fecd00',
                 '#ffe047',
@@ -74,3 +74,5 @@ resetBtn.addEventListener('click', () => {
     localStorage.setItem(POKESTATS, strDefaultStats);
     location.href = '../index.html';
 });
+console.log(typeCountArray(itemArrayFromLS, pokemonData));
+console.log(caughtItemsArray);

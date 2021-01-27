@@ -67,18 +67,51 @@ export function typeOfCaughtArray(itemsInCart, dataArray) {
 }
 
 /*
-//this returns array of types, including duplicates.
-//need to count up how many times an item appears in the array and add that to the array
-export function typeCountArray(storageArray, dataArray) {
+//function takes in a single array (items in cart)
+//this gets an array of the types of the caught pokemon INCLUDING duplicates
+export function typeCountArray(itemsInCart, dataArray) {
     let typeArray = [];
-    for (let itemInLS of storageArray) {
-        let item = findById(itemInLS.id, dataArray);
-        typeArray.push(item.type_1);
+    for (let itemInLS of itemsInCart) {
+        if (itemInLS.caught > 0) {
+            let item = findById(itemInLS.id, dataArray);
+            typeArray.push(item.type_1);
+        }
     }
-    let typeCountArray = [];
-    for (let string of typeArray) {
-        //for each thing in array{i} look to see if it is equal to the next one, or next one, or next one.
-        //if so ++ counter if not create counter of 1,
-        //when done comparing push that typeCountArray
+    console.log(typeArray);
+    //so now typeArray is an array of types we caught WITH REPEATS
+    let countArr = [];
+    for (let i = 0; i < typeArray.length; i++) {
+        const element1 = typeArray[i];
+        let countItem = 1;
+        for (let i = 1; i < typeArray.length; i++) {
+            const element2 = typeArray[i];
+            if (element1 === element2) {
+                typeArray.splice(i, 1);
+                countItem++;
+                return countItem;
+            }
+            countArr.push(countItem);
+            return countArr;
+        }
     }
-}*/
+}
+*/
+export function typeCountArray(itemsInCart, dataArray) {
+    let typeArray = [];
+    for (let itemInLS of itemsInCart) {
+        if (itemInLS.caught > 0) {
+            let item = findById(itemInLS.id, dataArray);
+            typeArray.push(item.type_1);
+        }
+    }
+    var counts = [];
+    console.log(typeArray);
+    // eslint-disable-next-line space-before-function-paren
+    typeArray.forEach(function (_item) {
+        if (typeof counts[_item] === 'undefined') counts[_item] = 1;
+        else counts[_item]++;
+    });
+    var result = [];
+    for (let i in counts) result.push(counts[i]);
+    return result;
+}
