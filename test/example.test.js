@@ -170,7 +170,7 @@ test('typeCountArry takes the local storage data and returns an array of counts 
             id: 12, //water
             seen: 1,
             caught: 1
-        },];
+        }];
     const expected = [1, 2];
     const actual = typeCountArray(fakeData, pokemonData);
     expect.deepEqual(actual, expected);
