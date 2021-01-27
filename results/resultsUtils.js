@@ -38,6 +38,7 @@ export function seenArray(arrayFromCart) {
     }
     return seenArray;
 }
+//gives an array of number of caughts ONLY 
 export function caughtArray(arrayFromCart) {
     const caughtArray = [];
     for (let item of arrayFromCart) {
@@ -46,11 +47,38 @@ export function caughtArray(arrayFromCart) {
     return caughtArray;
 }
 
-export function typeOfCaughtArray(caughtArray, dataArray) {
-    const typeArray = [];
-    for (let itemInLS of caughtArray) {
+//needs to take in storage data and base data 
+//returns an array of types of items CAUGHT in storage with no duplicates 
+export function typeOfCaughtArray(itemsInCart, dataArray) {
+    let typeArray = [];
+    for (let itemInLS of itemsInCart) {
+        if (itemInLS.caught > 0) {
+            let item = findById(itemInLS.id, dataArray);
+            typeArray.push(item.type_1);
+        }
+    }
+    let uniqueTypeArray = [];
+    typeArray.forEach((c) => {
+        if (!uniqueTypeArray.includes(c)) {
+            uniqueTypeArray.push(c);
+        }
+    });
+    return uniqueTypeArray;
+}
+
+//this returns array of types, including duplicates. 
+//need to count up how many times an item appears in the array and add that to the array 
+export function typeCountArray(storageArray, dataArray) {
+    let typeArray = [];
+    for (let itemInLS of storageArray) {
         let item = findById(itemInLS.id, dataArray);
         typeArray.push(item.type_1);
     }
-    return typeArray;
+    let typeCountArray = [];
+    for (let type of typeArray) {
+        //for each type in array{i} look to see if it is equal to the next one, or next one, or next one. 
+        //if so ++ counter if not create counter of 1, 
+
+
+    }
 }

@@ -130,6 +130,13 @@ table{
     border: solid .5px #fccf00;
     color: #2468b1;
 }
+
+canvas{
+    padding: 10px;
+    margin: 10px;
+    border: solid .5px #fccf00;
+}
+
 th{
     border-bottom: solid 2px #fccf00;
     padding: 10px;

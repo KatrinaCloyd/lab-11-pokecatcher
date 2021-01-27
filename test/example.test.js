@@ -119,21 +119,26 @@ test('caughtArry function should take the local storage data and return an array
 test('typeOfCaughtArry function should take the local storage data and return an array of strings', (expect) => {
     const fakeData = [
         {
-            id: 15,
+            id: 15, //bug
             seen: 1,
             caught: 0
         },
         {
-            id: 19,
+            id: 21, //normal
             seen: 1,
-            caught: 0
+            caught: 1
         },
         {
-            id: 12,
+            id: 12, //water
             seen: 2,
             caught: 1
-        }];
-    const expected = ['bug', 'bug', 'water'];
+        },
+        {
+            id: 19, //bug
+            seen: 1,
+            caught: 0
+        },];
+    const expected = ['normal', 'water'];
     const actual = typeOfCaughtArray(fakeData, pokemonData);
     expect.deepEqual(actual, expected);
 });
