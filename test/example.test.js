@@ -137,7 +137,7 @@ test('typeOfCaughtArry function should take the local storage data and return an
             id: 19, //bug
             seen: 1,
             caught: 0
-        },];
+        }];
     const expected = ['normal', 'water'];
     const actual = typeOfCaughtArray(fakeData, pokemonData);
     expect.deepEqual(actual, expected);

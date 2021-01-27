@@ -74,4 +74,3 @@ resetBtn.addEventListener('click', () => {
     localStorage.setItem(POKESTATS, strDefaultStats);
     location.href = '../index.html';
 });
-console.log(typeOfCaughtArray(itemArrayFromLS, pokemonData));
